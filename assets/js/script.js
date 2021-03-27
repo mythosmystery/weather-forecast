@@ -13,6 +13,8 @@ var currentWindSpeedEl = $("#currentWindSpeed");
 var currentUVIndexEl = $("#currentUVIndex");
 var recentSearchesEl = $("#recentSearches");
 var currentIconEl = $("#currentIcon");
+var forecastCardEl = $("#forecast");
+var forecastTempEl = [$("#day1temp"), $("#day2temp"), $("#day3temp"), $("#day4temp"), $("#day5temp")];
 
 var currentTemp;
 var currentHumidity;
@@ -24,6 +26,7 @@ var cityName;
 
 var currentDate = moment().format("MM/DD/YYYY");
 currentWeatherCardEl.hide();
+forecastCardEl.hide();
 
 function getCurrentWeather(cityID) {
    fetch("https://api.openweathermap.org/data/2.5/weather?q=" + cityID + "&appid=" + key + "&units=" + units)
@@ -60,13 +63,15 @@ function getOneCall(lat, lon) {
          forecast = data.daily;
          console.log(forecast);
          setCurrentWeather();
+         setForecast();
       })
       .catch(function () {
          // catch any errors
       });
 }
 function setForecast(){
-  
+  forecastCardEl.show();
+
 }
 function setCurrentWeather(){  
   currentWeatherCardEl.show();
@@ -109,7 +114,7 @@ function setRecentSearch(){
   recentSearchesEl.prepend(newButton);
 }
 
-recentSearchesEl.children().on("click", getRecentSearch);
+recentSearchesEl.find("button").on("click", getRecentSearch);
 
 
 weatherBtnEl.on("click", function(){

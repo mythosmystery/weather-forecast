@@ -50,9 +50,9 @@
          </div>
          <div class="col-7">
             <div class="card" id="currentWeather">
-               <div class="card-body">                   
-                    <h5 class="card-title" id="cityName"></h5>  
-                    <img id="currentIcon">                                 
+               <div class="card-body">
+                  <h5 class="card-title" id="cityName"></h5>
+                  <img id="currentIcon" />
                </div>
                <ul class="list-group list-group-flush">
                   <li class="list-group-item">Temperature: <span id="currentTemp"></span>&deg;F</li>
@@ -76,17 +76,51 @@
             </div>
          </div>
          <div class="col-7">
-            <div class="card">
+            <div class="card" id="forecast">
                <div class="card-body">
                   <h5 class="card-title">5-Day Forecast:</h5>
                </div>
                <div class="row mx-2">
                   <div class="card bg-primary text-light m-2" style="width: 17%">
                      <div class="card-body">
-                         <h5 class="card-title" id="day1Date"></h5>
-                         <img id="day1Icon">
+                        <h5 class="card-title" id="day1Date"></h5>
+                        <img id="day1Icon" />
+                        <p>Temp: <span id="day1temp"></span>&deg;F</p>
+                        <p>Humidity: <span id="day1Humidity"></span>%</p>
                      </div>
-                  </div>                  
+                  </div>
+                  <div class="card bg-primary text-light m-2" style="width: 17%">
+                     <div class="card-body">
+                        <h5 class="card-title" id="day2Date"></h5>
+                        <img id="day2Icon" />
+                        <p>Temp: <span id="day2temp"></span>&deg;F</p>
+                        <p>Humidity: <span id="day2Humidity"></span>%</p>
+                     </div>
+                  </div>
+                  <div class="card bg-primary text-light m-2" style="width: 17%">
+                     <div class="card-body">
+                        <h5 class="card-title" id="day3Date"></h5>
+                        <img id="day3Icon" />
+                        <p>Temp: <span id="day3temp"></span>&deg;F</p>
+                        <p>Humidity: <span id="day3Humidity"></span>%</p>
+                     </div>
+                  </div>
+                  <div class="card bg-primary text-light m-2" style="width: 17%">
+                     <div class="card-body">
+                        <h5 class="card-title" id="day4Date"></h5>
+                        <img id="day4Icon" />
+                        <p>Temp: <span id="day4temp"></span>&deg;F</p>
+                        <p>Humidity: <span id="day4Humidity"></span>%</p>
+                     </div>
+                  </div>
+                  <div class="card bg-primary text-light m-2" style="width: 17%">
+                     <div class="card-body">
+                        <h5 class="card-title" id="day5Date"></h5>
+                        <img id="day5Icon" />
+                        <p>Temp: <span id="day5temp"></span>&deg;F</p>
+                        <p>Humidity: <span id="day5Humidity"></span>%</p>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
