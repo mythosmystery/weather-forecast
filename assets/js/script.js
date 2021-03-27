@@ -5,6 +5,7 @@ const defaultCity = "Oklahoma City";
 
 var weatherBtnEl = $("#getWeather");
 var cityInputEl = $("#cityInput");
+var invalidCityEl = $("#invalidCity");
 
 var currentWeatherCardEl = $("#currentWeather");
 var cityNameEl = $("#cityName");
@@ -31,6 +32,7 @@ var forecast;
 var cityName;
 
 var currentDate = moment().format("MM/DD/YYYY");
+invalidCityEl.hide();
 currentWeatherCardEl.hide();
 forecastCardEl.hide();
 
@@ -49,6 +51,7 @@ function getCurrentWeather(cityID) {
       })
       .catch(function () {
          // catch any errors
+         invalidCityEl.show();
       });
 }
 function getOneCall(lat, lon) {
@@ -72,6 +75,7 @@ function getOneCall(lat, lon) {
          setForecast();
       })
       .catch(function () {
+        invalidCityEl.show();
          // catch any errors
       });
 }
@@ -88,6 +92,7 @@ function setForecast(){
 
 }
 function setCurrentWeather(){  
+  invalidCityEl.hide();
   currentWeatherCardEl.show();
   cityNameEl.text(cityName + ` (${currentDate})`); 
   currentIconEl.attr("src", "http://openweathermap.org/img/wn/"+currentIcon+"@2x.png");
