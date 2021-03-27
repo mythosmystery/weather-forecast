@@ -5,16 +5,22 @@ const defaultCity = "Oklahoma City";
 
 var weatherBtnEl = $("#getWeather");
 var cityInputEl = $("#cityInput");
+
 var currentWeatherCardEl = $("#currentWeather");
 var cityNameEl = $("#cityName");
 var currentTempEl = $("#currentTemp");
 var currentHumidityEl = $("#currentHumidity");
 var currentWindSpeedEl = $("#currentWindSpeed");
 var currentUVIndexEl = $("#currentUVIndex");
-var recentSearchesEl = $("#recentSearches");
 var currentIconEl = $("#currentIcon");
+
+var recentSearchesEl = $("#recentSearches");
+
 var forecastCardEl = $("#forecast");
 var forecastTempEl = [$("#day1temp"), $("#day2temp"), $("#day3temp"), $("#day4temp"), $("#day5temp")];
+var forecastIconEl = [$("#day1Icon"), $("#day2Icon"), $("#day3Icon"), $("#day4Icon"), $("#day5Icon")];
+var forecastDateEl = [$("#day1Date"), $("#day2Date"), $("#day3Date"), $("#day4Date"), $("#day5Date")];
+var forecastHumidityEl = [$("#day1Humidity"), $("#day2Humidity"), $("#day3Humidity"), $("#day4Humidity"), $("#day5Humidity")];
 
 var currentTemp;
 var currentHumidity;
@@ -71,6 +77,14 @@ function getOneCall(lat, lon) {
 }
 function setForecast(){
   forecastCardEl.show();
+  var date = moment();
+  for (let i = 0; i < forecastDateEl.length; i++) {   
+    date.add(1, "day");
+    forecastDateEl[i].text(date.format("MM/DD/YYYY"));
+    forecastIconEl[i].attr("src", "http://openweathermap.org/img/wn/"+forecast[i].weather[0].icon+".png");
+    forecastTempEl[i].text(forecast[i].temp.day);
+    forecastHumidityEl[i].text(forecast[i].humidity);
+  }
 
 }
 function setCurrentWeather(){  
