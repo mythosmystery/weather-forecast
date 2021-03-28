@@ -2,7 +2,7 @@
 Created by Hunter Barton
 
 ##My Work
-I used bootstrap to construct a user friendly and responsive UI. I used moment.js to get the current date and manipulate it for the forecast. I used jquery a lot in this app. I called the Open weather map API to get all of the weather data needed. I used two calls to get the current weather and the UV index and forecast. I get user input for the city and display an error message if an invalid city is input. I add the city to a list of buttons for the previously searched cities. This gets pushed to localstorage so it will persist after a refresh. 
+I used bootstrap to construct a user friendly and responsive UI. I used moment.js to get the current date and manipulate it for the forecast. I used jquery a lot in this app. I called the Open weather map API to get all of the weather data needed. I used two calls to get the current weather and the UV index and forecast. I get user input for the city and display an error message if an invalid city is input. I add the city to a list of buttons for the previously searched cities. This gets pushed to localstorage so it will persist after a refresh. I also get the ID for each card's weather icon and pull them from the openweathermap site.
 
 
 ## Your Task
