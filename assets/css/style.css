@@ -1,6 +1,12 @@
 #cityName{
     text-transform: capitalize;
 }
+#forecastCity{
+    text-transform: capitalize;
+}
+.list-group-item{
+    text-transform: capitalize;
+}
 .low{
     background-color: greenyellow;    
 }

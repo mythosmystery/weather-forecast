@@ -155,14 +155,15 @@ function getRecentSearch(event) {
 function setRecentSearch() {
    var buttonArray = recentSearchesEl.find("button");
    var duplicate = false;
+   cityList = JSON.parse(localStorage.getItem("cities"));
    for (let i = 0; i < buttonArray.length; i++) {
       console.log(buttonArray[i].textContent);
       if (buttonArray[i].textContent == cityName) duplicate = true;
    }
    if (!duplicate) {
       cityList.push(cityName);
-      localStorage.setItem("cities", JSON.stringify(cityList));
       createButton(cityName);
+      localStorage.setItem("cities", JSON.stringify(cityList));      
    }
 }
 function createButton(name) {
