@@ -3,7 +3,7 @@ const units = "imperial";
 const key = "1b0d53466c6b55d0c85f1d56f3184390";
 
 //url constants
-const iconURL = "http://openweathermap.org/img/wn/";
+const iconURL = "https://openweathermap.org/img/wn/";
 const apiURL = "https://api.openweathermap.org/data/2.5/weather?q=";
 const onecallURL = "https://api.openweathermap.org/data/2.5/onecall?lat=";
 
